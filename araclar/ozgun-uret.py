@@ -27,33 +27,58 @@ YIL_TABAN = {
 # Geçmiş yıllarda soru dağılımı: 30 Türkçe + 30 Matematik (GY), 27 Tarih + 18 Coğrafya + 9 Vatandaşlık + 6 Güncel (GK)
 KONU_TABAN = ["30 Türkçe", "30 Matematik", "27 Tarih", "18 Coğrafya", "9 Vatandaşlık", "6 Güncel Bilgiler"]
 
-arsiv = {}
+arsiv_kayit = []
 if ARSIV.exists():
     try:
         ham = json.loads(ARSIV.read_text(encoding="utf-8"))
         for k in ham.get("kayitlar", []):
-            y = int(k.get("yil") or 0)
-            if y and k.get("url") and str(k.get("durum", "")).lower() in ("200", "403", "engellendi", "ok", "true"):
-                arsiv.setdefault(y, k["url"])
+            if k.get("url") and "200 (application/pdf)" in str(k.get("durum", "")):
+                arsiv_kayit.append(k)
     except Exception as e:
         print("arsiv okunamadi:", e)
 
 # ÖSYM resmî soru kitapçığı sayfası (doğrulandı: HTTP 200, 2026-09-24)
 RESMI_SAYFA = "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi"
+SIRA_TUR = {"Lisans": 0, "Önlisans": 1, "Ortaöğretim": 2}
+
+def yil_kitapciklari(yil):
+    """O yılın GY-GK kitapçıkları: yalnız HTTP 200 + application/pdf ölçülmüş bağlantılar."""
+    kay = [k for k in arsiv_kayit if int(k.get("yil") or 0) == yil and "GY-GK" in str(k.get("test", ""))]
+    kay.sort(key=lambda k: (SIRA_TUR.get(k.get("tur"), 9), k.get("url")))
+    gor, liste = set(), []
+    for k in kay:
+        anahtar = (k.get("tur"), k.get("url"))
+        if anahtar in gor:
+            continue
+        gor.add(anahtar)
+        liste.append({"tur": k.get("tur", ""), "oturum": k.get("oturum", ""),
+                      "test": k.get("test", "GY-GK"), "url": k["url"],
+                      "kaynak_sayfa": k.get("kaynak_sayfa", "")})
+    return liste
 
 yillar = []
 for y in sorted(YIL_TABAN):
+    kk = yil_kitapciklari(y)
+    duyuru = ""
+    for k in arsiv_kayit:
+        if int(k.get("yil") or 0) == y and k.get("kaynak_sayfa"):
+            duyuru = k["kaynak_sayfa"]
+            if k.get("tur") == "Lisans":
+                break
     yillar.append({
         "yil": y,
         "tur": "KPSS Lisans / Ön Lisans / Ortaöğretim",
         "yapi": YIL_TABAN[y] + " — 60 Genel Yetenek + 60 Genel Kültür = 120 soru / 130 dakika",
         "konu": KONU_TABAN,
-        "url": arsiv.get(y),
+        "kitapciklar": kk,
+        "url": (kk[0]["url"] if kk else None),
+        "duyuru_url": duyuru,
         "arsiv_url": RESMI_SAYFA,
-        "not": ("Doğrudan kitapçık bağlantısı doğrulanmıştır (ÖSYM sunucusu)." if y in arsiv else
-                "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. "
-                "Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. "
-                "Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."),
+        "not": (str(len(kk)) + " kitapçık bağlantısı ÖSYM sunucusundan 200 + application/pdf olarak ölçüldü "
+                "(2026-09-24). ÖSYM yoğunlukta otomatik isteklere 'Erişim Engellendi' döndürebilir; "
+                "o durumda bağlantıyı tarayıcıda aç ya da resmî sayfayı kullan." if kk else
+                "Bu yıl için GY-GK kitapçığı HTTP ile doğrulanamadı (ÖSYM erişim kısıtı). "
+                "Soru metni telif gereği yayımlanmaz; kitapçığa ÖSYM'nin kendi sayfasından ulaşabilirsin."),
     })
 
 # ── Özgün sorular ─────────────────────────────────────────────────────────────

@@ -15,9 +15,11 @@ window.CIKMIS = {
     "9 Vatandaşlık",
     "6 Güncel Bilgiler"
    ],
+   "kitapciklar": [],
    "url": null,
+   "duyuru_url": "",
    "arsiv_url": "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi",
-   "not": "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."
+   "not": "Bu yıl için GY-GK kitapçığı HTTP ile doğrulanamadı (ÖSYM erişim kısıtı). Soru metni telif gereği yayımlanmaz; kitapçığa ÖSYM'nin kendi sayfasından ulaşabilirsin."
   },
   {
    "yil": 2012,
@@ -31,9 +33,19 @@ window.CIKMIS = {
     "9 Vatandaşlık",
     "6 Güncel Bilgiler"
    ],
-   "url": null,
+   "kitapciklar": [
+    {
+     "tur": "Lisans",
+     "oturum": "Cumartesi Sabah (A Grubu ve Öğretmenlik)",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2012/KPSS/Lisans/KPSS1_2012_CS_GYGK.pdf",
+     "kaynak_sayfa": "https://www.osym.gov.tr/2012kpss-lisans-sorular-ve-yanitlar"
+    }
+   ],
+   "url": "https://dokuman.osym.gov.tr/pdfdokuman/2012/KPSS/Lisans/KPSS1_2012_CS_GYGK.pdf",
+   "duyuru_url": "https://www.osym.gov.tr/2012kpss-lisans-sorular-ve-yanitlar",
    "arsiv_url": "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi",
-   "not": "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."
+   "not": "1 kitapçık bağlantısı ÖSYM sunucusundan 200 + application/pdf olarak ölçüldü (2026-09-24). ÖSYM yoğunlukta otomatik isteklere 'Erişim Engellendi' döndürebilir; o durumda bağlantıyı tarayıcıda aç ya da resmî sayfayı kullan."
   },
   {
    "yil": 2013,
@@ -47,9 +59,19 @@ window.CIKMIS = {
     "9 Vatandaşlık",
     "6 Güncel Bilgiler"
    ],
-   "url": null,
+   "kitapciklar": [
+    {
+     "tur": "Lisans",
+     "oturum": "Cumartesi Sabah (A Grubu ve Öğretmenlik)",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2013/KPSS1/CS.pdf",
+     "kaynak_sayfa": "https://www.osym.gov.tr/2013kpss-lisans-soru-kitapciklari-ve-cevap-anahtarlari"
+    }
+   ],
+   "url": "https://dokuman.osym.gov.tr/pdfdokuman/2013/KPSS1/CS.pdf",
+   "duyuru_url": "https://www.osym.gov.tr/2013kpss-lisans-soru-kitapciklari-ve-cevap-anahtarlari",
    "arsiv_url": "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi",
-   "not": "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."
+   "not": "1 kitapçık bağlantısı ÖSYM sunucusundan 200 + application/pdf olarak ölçüldü (2026-09-24). ÖSYM yoğunlukta otomatik isteklere 'Erişim Engellendi' döndürebilir; o durumda bağlantıyı tarayıcıda aç ya da resmî sayfayı kullan."
   },
   {
    "yil": 2014,
@@ -63,9 +85,33 @@ window.CIKMIS = {
     "9 Vatandaşlık",
     "6 Güncel Bilgiler"
    ],
-   "url": null,
+   "kitapciklar": [
+    {
+     "tur": "Lisans",
+     "oturum": "A Grubu ve Öğretmenlik - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2014/KPSS/SINAVSORULARI/2014KPSSALANCSGKGY.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    },
+    {
+     "tur": "Önlisans",
+     "oturum": "Ön Lisans Düzeyi - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2014/KPSS/SINAVSORULARI/2014KPSSOnlisans.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    },
+    {
+     "tur": "Ortaöğretim",
+     "oturum": "Ortaöğretim Düzeyi - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2014/KPSS/SINAVSORULARI/2014KPSSOrtaogretim.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    }
+   ],
+   "url": "https://dokuman.osym.gov.tr/pdfdokuman/2014/KPSS/SINAVSORULARI/2014KPSSALANCSGKGY.pdf",
+   "duyuru_url": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)",
    "arsiv_url": "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi",
-   "not": "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."
+   "not": "3 kitapçık bağlantısı ÖSYM sunucusundan 200 + application/pdf olarak ölçüldü (2026-09-24). ÖSYM yoğunlukta otomatik isteklere 'Erişim Engellendi' döndürebilir; o durumda bağlantıyı tarayıcıda aç ya da resmî sayfayı kullan."
   },
   {
    "yil": 2015,
@@ -79,9 +125,26 @@ window.CIKMIS = {
     "9 Vatandaşlık",
     "6 Güncel Bilgiler"
    ],
-   "url": null,
+   "kitapciklar": [
+    {
+     "tur": "Lisans",
+     "oturum": "Cumartesi Sabah (A Grubu ve Öğretmenlik)",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2015/KPSS/2015KPSS_CS28072015.pdf",
+     "kaynak_sayfa": "https://www.osym.gov.tr/2015kpss-a-grubu-ve-ogretmenlik-sinavi-temel-soru-kitapciklari-ve-cevap-anahtarlari-10"
+    },
+    {
+     "tur": "Lisans",
+     "oturum": "Cumartesi Sabah - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2015/KPSS/SINAVSORULARI/2015KPSSALANGKGY.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    }
+   ],
+   "url": "https://dokuman.osym.gov.tr/pdfdokuman/2015/KPSS/2015KPSS_CS28072015.pdf",
+   "duyuru_url": "https://www.osym.gov.tr/2015kpss-a-grubu-ve-ogretmenlik-sinavi-temel-soru-kitapciklari-ve-cevap-anahtarlari-10",
    "arsiv_url": "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi",
-   "not": "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."
+   "not": "2 kitapçık bağlantısı ÖSYM sunucusundan 200 + application/pdf olarak ölçüldü (2026-09-24). ÖSYM yoğunlukta otomatik isteklere 'Erişim Engellendi' döndürebilir; o durumda bağlantıyı tarayıcıda aç ya da resmî sayfayı kullan."
   },
   {
    "yil": 2016,
@@ -95,9 +158,33 @@ window.CIKMIS = {
     "9 Vatandaşlık",
     "6 Güncel Bilgiler"
    ],
-   "url": null,
+   "kitapciklar": [
+    {
+     "tur": "Lisans",
+     "oturum": "Lisans (A Grubu ve Öğretmenlik)",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2016/KPSS/2016KPSSGenelYetenekGenelKultur.pdf",
+     "kaynak_sayfa": "https://www.osym.gov.tr/2016kpss-lisans-sinavi-temel-soru-kitapciklari-ve-cevap-anahtarlari"
+    },
+    {
+     "tur": "Önlisans",
+     "oturum": "Ön Lisans Düzeyi",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2016/KPSSORTON/2016KPSSOnLisansDuzeyiTemel16102016.pdf",
+     "kaynak_sayfa": "https://www.osym.gov.tr/2016kpss-on-lisans-duzeyi-temel-soru-kitapcigi-ve-cevap-anahtari"
+    },
+    {
+     "tur": "Ortaöğretim",
+     "oturum": "Ortaöğretim Düzeyi",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2016/KPSSORTON/2016KPSSOrtaogretimDuzeyiTemel20112016.pdf",
+     "kaynak_sayfa": "https://www.osym.gov.tr/2016kpss-ortaogretim-duzeyi-temel-soru-kitapcigi-ve-cevap-anahtari"
+    }
+   ],
+   "url": "https://dokuman.osym.gov.tr/pdfdokuman/2016/KPSS/2016KPSSGenelYetenekGenelKultur.pdf",
+   "duyuru_url": "https://www.osym.gov.tr/2016kpss-lisans-sinavi-temel-soru-kitapciklari-ve-cevap-anahtarlari",
    "arsiv_url": "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi",
-   "not": "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."
+   "not": "3 kitapçık bağlantısı ÖSYM sunucusundan 200 + application/pdf olarak ölçüldü (2026-09-24). ÖSYM yoğunlukta otomatik isteklere 'Erişim Engellendi' döndürebilir; o durumda bağlantıyı tarayıcıda aç ya da resmî sayfayı kullan."
   },
   {
    "yil": 2017,
@@ -111,9 +198,19 @@ window.CIKMIS = {
     "9 Vatandaşlık",
     "6 Güncel Bilgiler"
    ],
-   "url": null,
+   "kitapciklar": [
+    {
+     "tur": "Lisans",
+     "oturum": "A Grubu ve Öğretmenlik - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2017/KPSS/SINAVSORULARI/2017KPSSALANGKGY.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    }
+   ],
+   "url": "https://dokuman.osym.gov.tr/pdfdokuman/2017/KPSS/SINAVSORULARI/2017KPSSALANGKGY.pdf",
+   "duyuru_url": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)",
    "arsiv_url": "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi",
-   "not": "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."
+   "not": "1 kitapçık bağlantısı ÖSYM sunucusundan 200 + application/pdf olarak ölçüldü (2026-09-24). ÖSYM yoğunlukta otomatik isteklere 'Erişim Engellendi' döndürebilir; o durumda bağlantıyı tarayıcıda aç ya da resmî sayfayı kullan."
   },
   {
    "yil": 2018,
@@ -127,9 +224,26 @@ window.CIKMIS = {
     "9 Vatandaşlık",
     "6 Güncel Bilgiler"
    ],
-   "url": null,
+   "kitapciklar": [
+    {
+     "tur": "Önlisans",
+     "oturum": "Ön Lisans - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2018/KPSS/SINAVSORULARI/2018-KPSS-OnLisans12112019.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    },
+    {
+     "tur": "Ortaöğretim",
+     "oturum": "Ortaöğretim - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2018/KPSS/SINAVSORULARI/2018-KPSS-Ortaogretim12112019.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    }
+   ],
+   "url": "https://dokuman.osym.gov.tr/pdfdokuman/2018/KPSS/SINAVSORULARI/2018-KPSS-OnLisans12112019.pdf",
+   "duyuru_url": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)",
    "arsiv_url": "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi",
-   "not": "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."
+   "not": "2 kitapçık bağlantısı ÖSYM sunucusundan 200 + application/pdf olarak ölçüldü (2026-09-24). ÖSYM yoğunlukta otomatik isteklere 'Erişim Engellendi' döndürebilir; o durumda bağlantıyı tarayıcıda aç ya da resmî sayfayı kullan."
   },
   {
    "yil": 2019,
@@ -143,9 +257,26 @@ window.CIKMIS = {
     "9 Vatandaşlık",
     "6 Güncel Bilgiler"
    ],
-   "url": null,
+   "kitapciklar": [
+    {
+     "tur": "Lisans",
+     "oturum": "Lisans - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2019/KPSS/SINAVSORULARI/2019_Lisans_GYGK.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    },
+    {
+     "tur": "Lisans",
+     "oturum": "Lisans",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2019/KPSS/gy-gk16072019.pdf",
+     "kaynak_sayfa": "https://www.osym.gov.tr/2019kpss-lisans-genel-yetenekgenel-kultur-ve-egitim-bilimleri-temel-soru-kitapciklari-ve-cevap-anahtarlari-10"
+    }
+   ],
+   "url": "https://dokuman.osym.gov.tr/pdfdokuman/2019/KPSS/SINAVSORULARI/2019_Lisans_GYGK.pdf",
+   "duyuru_url": "https://www.osym.gov.tr/2019kpss-lisans-genel-yetenekgenel-kultur-ve-egitim-bilimleri-temel-soru-kitapciklari-ve-cevap-anahtarlari-10",
    "arsiv_url": "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi",
-   "not": "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."
+   "not": "2 kitapçık bağlantısı ÖSYM sunucusundan 200 + application/pdf olarak ölçüldü (2026-09-24). ÖSYM yoğunlukta otomatik isteklere 'Erişim Engellendi' döndürebilir; o durumda bağlantıyı tarayıcıda aç ya da resmî sayfayı kullan."
   },
   {
    "yil": 2020,
@@ -159,9 +290,40 @@ window.CIKMIS = {
     "9 Vatandaşlık",
     "6 Güncel Bilgiler"
    ],
-   "url": null,
+   "kitapciklar": [
+    {
+     "tur": "Lisans",
+     "oturum": "Lisans - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2020/KPSS/SINAVSORULARI/2020_KPSS_Lisans_GYGK.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    },
+    {
+     "tur": "Önlisans",
+     "oturum": "Ön Lisans",
+     "test": "GY-GK + Cevap Anahtarı",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2020/KPSS/ONL/internetkitap26102020.pdf",
+     "kaynak_sayfa": "https://www.osym.gov.tr/2020kpss-on-lisans-temel-soru-kitapcigi-ve-cevap-anahtari-10"
+    },
+    {
+     "tur": "Önlisans",
+     "oturum": "Ön Lisans - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2020/KPSS/SINAVSORULARI/2020_KPSS_Onlisans.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    },
+    {
+     "tur": "Ortaöğretim",
+     "oturum": "Ortaöğretim - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2020/KPSS/SINAVSORULARI/2020_KPSS_Ortaogretim.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    }
+   ],
+   "url": "https://dokuman.osym.gov.tr/pdfdokuman/2020/KPSS/SINAVSORULARI/2020_KPSS_Lisans_GYGK.pdf",
+   "duyuru_url": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)",
    "arsiv_url": "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi",
-   "not": "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."
+   "not": "4 kitapçık bağlantısı ÖSYM sunucusundan 200 + application/pdf olarak ölçüldü (2026-09-24). ÖSYM yoğunlukta otomatik isteklere 'Erişim Engellendi' döndürebilir; o durumda bağlantıyı tarayıcıda aç ya da resmî sayfayı kullan."
   },
   {
    "yil": 2021,
@@ -175,9 +337,19 @@ window.CIKMIS = {
     "9 Vatandaşlık",
     "6 Güncel Bilgiler"
    ],
-   "url": null,
+   "kitapciklar": [
+    {
+     "tur": "Lisans",
+     "oturum": "Lisans - alternatif dosya adı",
+     "test": "GY-GK",
+     "url": "https://dokuman.osym.gov.tr/pdfdokuman/2021/KPSS/SINAVSORULARI/2021_KPSS_Lisans_GYGK.pdf",
+     "kaynak_sayfa": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)"
+    }
+   ],
+   "url": "https://dokuman.osym.gov.tr/pdfdokuman/2021/KPSS/SINAVSORULARI/2021_KPSS_Lisans_GYGK.pdf",
+   "duyuru_url": "https://dokuman.osym.gov.tr/ (SINAVSORULARI klasörü)",
    "arsiv_url": "https://www.osym.gov.tr/soru-kitapciklarinin-goruntulenmesi",
-   "not": "ÖSYM soru kitapçıklarının telif hakkı ÖSYM'ye aittir; bu uygulama soru metni yayımlamaz. Kitapçığın resmî PDF'ine ÖSYM'nin kendi soru kitapçığı sayfasından yıl seçerek ulaşabilirsin. Doğrudan bağlantı yalnızca sunucudan 200 + application/pdf yanıtı alındığında gösterilir."
+   "not": "1 kitapçık bağlantısı ÖSYM sunucusundan 200 + application/pdf olarak ölçüldü (2026-09-24). ÖSYM yoğunlukta otomatik isteklere 'Erişim Engellendi' döndürebilir; o durumda bağlantıyı tarayıcıda aç ya da resmî sayfayı kullan."
   }
  ],
  "ozgun": [

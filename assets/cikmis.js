@@ -32,9 +32,12 @@
       (y.konu ? '<div class="satir" style="margin-top:9px">' + y.konu.map(function (k) {
         return '<span class="etiket">' + A.kacis(k) + "</span>"; }).join("") + "</div>" : "") +
       '<div class="satir" style="margin-top:11px">' +
-      (y.arsiv_url ? '<a class="dugme" href="' + A.kacis(y.arsiv_url) + '" target="_blank" rel="noopener" style="text-decoration:none">🏛 ÖSYM resmî kitapçık sayfası</a>' : "") +
-      (y.url ? '<a class="dugme ikincil" href="' + A.kacis(y.url) + '" target="_blank" rel="noopener" style="text-decoration:none">📄 ' + y.yil + " kitapçığı (doğrulanmış PDF)</a>"
-             : '<span class="etiket">doğrudan PDF bağlantısı doğrulanmadı — resmî sayfadan yıl seç</span>') +
+      (y.kitapciklar && y.kitapciklar.length ? y.kitapciklar.map(function (k) {
+        return '<a class="dugme ikincil" href="' + A.kacis(k.url) + '" target="_blank" rel="noopener" style="text-decoration:none">📄 ' +
+          A.kacis((k.tur || "Lisans") + " · GY-GK kitapçığı") + "</a>"; }).join("") + " " : "") +
+      (y.duyuru_url ? '<a class="dugme ikincil" href="' + A.kacis(y.duyuru_url) + '" target="_blank" rel="noopener" style="text-decoration:none">📰 ÖSYM duyuru sayfası</a>' : "") +
+      (y.arsiv_url ? '<a class="dugme" href="' + A.kacis(y.arsiv_url) + '" target="_blank" rel="noopener" style="text-decoration:none">🏛 ÖSYM soru kitapçığı sayfası</a>' : "") +
+      ((!y.kitapciklar || !y.kitapciklar.length) ? '<span class="etiket">doğrulanmış doğrudan PDF yok — resmî sayfadan yıl seç</span>' : "") +
       "</div>" +
       (y.not ? '<p class="aciklama" style="margin-top:9px">' + A.kacis(y.not) + "</p>" : "") + "</div>";
   };
