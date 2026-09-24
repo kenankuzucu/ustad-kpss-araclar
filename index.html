@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tr" data-tema="turkuaz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- © 2026 Kenan Kuzucu · ÜSTAD KPSS ARAÇLAR · TÜM HAKLARI SAKLIDIR (5846 sayılı FSEK). -->
+<meta name="surum" content="1.0">
+<title>ÜSTAD KPSS ARAÇLAR · Sınav Takvimi · Net-Puan · Notlar · Güncel Bilgiler</title>
+<link rel="stylesheet" href="assets/stil.css">
+</head>
+<body>
+<div id="UYG">
+  <nav id="menu">
+    <div class="marka">
+      <img src="tasarim/ustad-kafa.png" alt="ÜSTAD">
+      <div><b>ÜSTAD KPSS ARAÇLAR</b><span id="markaAlt">sınav araçları paketi</span></div>
+    </div>
+    <div id="menuMaddeler"></div>
+    <div style="margin-top:12px;font-size:11.5px;color:var(--soluk);line-height:1.5">
+      Sürüm <b id="surumYazi">1.0</b> · <span id="saatYazi">--:--</span>
+    </div>
+  </nav>
+
+  <main id="icerik">
+    <!-- ANA SAYFA -->
+    <section class="ekran gorunur" id="ekran-panel">
+      <div class="baslik"><div class="tepe" style="background:var(--panel)"></div>
+        <h1>Ana Sayfa<span class="alt">KPSS yolculuğunun tüm araçları tek yerde</span></h1></div>
+      <div class="izgara uclu" id="panelKartlar"></div>
+      <div class="kart">
+        <h2 class="kucuk">⏳ En yakın sınav</h2>
+        <div id="panelSayim"></div>
+      </div>
+      <div class="kart">
+        <h2 class="kucuk">📌 Kısayollar</h2>
+        <div class="satir">
+          <button class="dugme" data-git="hesap">🧮 Net &amp; puan hesapla</button>
+          <button class="dugme" data-git="notlar">📝 Not ekle</button>
+          <button class="dugme" data-git="guncel">📰 Güncel bilgiler</button>
+          <button class="dugme" data-git="cikmis">📚 Çıkmış sorular arşivi</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GERİ SAYIM -->
+    <section class="ekran" id="ekran-sayim">
+      <div class="baslik"><div class="tepe" style="background:var(--sayim)"></div>
+        <h1>⏳ Sınav Geri Sayımı<span class="alt">Tarihler ÖSYM 2026 takviminden alınmıştır</span></h1></div>
+      <div class="kart">
+        <h2 class="kucuk" id="sayimHedefAd">—</h2>
+        <div class="sayim-buyuk">
+          <div class="sb-kutu"><b id="sbGun">0</b><span>GÜN</span></div>
+          <div class="sb-kutu"><b id="sbSaat">0</b><span>SAAT</span></div>
+          <div class="sb-kutu"><b id="sbDakika">0</b><span>DAKİKA</span></div>
+          <div class="sb-kutu"><b id="sbSaniye">0</b><span>SANİYE</span></div>
+        </div>
+        <p class="aciklama" id="sayimNot" style="margin-top:12px"></p>
+      </div>
+      <div class="kart">
+        <h2 class="kucuk">📅 2026 sınav takvimi</h2>
+        <div id="sayimListe"></div>
+      </div>
+      <div class="kart">
+        <h2 class="kucuk">📊 Test yapısı (KPSS Genel Yetenek-Genel Kültür)</h2>
+        <p class="aciklama" id="yapiAciklama"></p>
+        <table id="yapiTablo"><thead><tr><th>Test</th><th>Ders</th><th>Soru</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div class="kart">
+        <h2 class="kucuk">🔔 Sınav günü hatırlatıcıları</h2>
+        <div class="satir">
+          <button class="dugme" id="hatirlaticiAc">Bildirim izni ver / hatırlatıcı kur</button>
+          <span class="etiket" id="hatirlaticiDurum">durum: bilinmiyor</span>
+        </div>
+        <p class="aciklama" style="margin-top:8px">Sınav sabahı 07.00, sınavdan 1 gün önce ve 7 gün önce olmak üzere cihaz bildirimi planlanır (uygulama APK olarak kurulduğunda çalışır).</p>
+      </div>
+    </section>
+
+    <!-- HESAPLAMA -->
+    <section class="ekran" id="ekran-hesap">
+      <div class="baslik"><div class="tepe" style="background:var(--hesap)"></div>
+        <h1>🧮 Net &amp; Puan Hesaplama<span class="alt">KPSS'de yanlış doğruyu götürmez: net = doğru sayısı</span></h1></div>
+      <div class="izgara ikili">
+        <div class="kart">
+          <h2 class="kucuk">Genel Yetenek (60 soru)</h2>
+          <label class="alan" for="gyDogru">Doğru</label><input type="number" id="gyDogru" min="0" max="60" value="0">
+          <label class="alan" for="gyYanlis">Yanlış</label><input type="number" id="gyYanlis" min="0" max="60" value="0">
+          <div class="satir" style="margin-top:8px"><span class="etiket" id="gyBos">boş: 60</span></div>
+        </div>
+        <div class="kart">
+          <h2 class="kucuk">Genel Kültür (60 soru)</h2>
+          <label class="alan" for="gkDogru">Doğru</label><input type="number" id="gkDogru" min="0" max="60" value="0">
+          <label class="alan" for="gkYanlis">Yanlış</label><input type="number" id="gkYanlis" min="0" max="60" value="0">
+          <div class="satir" style="margin-top:8px"><span class="etiket" id="gkBos">boş: 60</span></div>
+        </div>
+      </div>
+      <div class="kart">
+        <label class="alan" for="hedefDogru">Hedeflediğin toplam doğru (isteğe bağlı)</label>
+        <input type="number" id="hedefDogru" min="0" max="120" value="85">
+        <div class="satir" style="margin-top:10px">
+          <button class="dugme" id="hesapla">Hesapla</button>
+          <button class="dugme ikincil" id="denemeKaydet">Bu denemeyi kaydet</button>
+          <button class="dugme ikincil" id="temizle">Temizle</button>
+        </div>
+        <div class="sonuc-kutu" id="hesapSonuc">Doğru ve yanlış sayılarını girip <b>Hesapla</b>'ya bas.</div>
+      </div>
+      <div class="kart">
+        <h2 class="kucuk">📈 Kaydedilen denemeler</h2>
+        <div id="denemeGecmis"></div>
+      </div>
+      <div class="kart">
+        <div class="telif">
+          <b>Puan hakkında dürüst bilgi:</b> KPSS puanı ÖSYM'nin <b>standart puan</b> dönüşümüyle hesaplanır
+          (testlerinizin ortalaması ve standart sapması tüm adaylar arasında hesaplanır). Bu yüzden hiçbir uygulama
+          kesin puan veremez. Buradaki "tahmini puan", 2011-2026 arasında kamuya açıklanmış ortalama taban değerlerine
+          göre kıyas amaçlı bir <b>gösterge</b>dir; resmî puan yalnızca ÖSYM sonuç belgesinde geçerlidir.
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTLAR -->
+    <section class="ekran" id="ekran-notlar">
+      <div class="baslik"><div class="tepe" style="background:var(--notlar)"></div>
+        <h1>📝 Notlarım<span class="alt">Konu etiketli, aranabilir, yedeklenebilir notlar</span></h1></div>
+      <div class="kart">
+        <label class="alan" for="notBaslik">Başlık</label>
+        <input type="text" id="notBaslik" placeholder="örn. Tarih · Kurtuluş Savaşı kronolojisi">
+        <label class="alan" for="notDers">Ders / konu etiketi</label>
+        <select id="notDers">
+          <option>Türkçe</option><option>Matematik</option><option>Tarih</option><option>Coğrafya</option>
+          <option>Vatandaşlık</option><option>Güncel Bilgiler</option><option>Genel</option>
+        </select>
+        <label class="alan" for="notGovde">Not</label>
+        <textarea id="notGovde" placeholder="Aklında kalması gerekenleri buraya yaz..."></textarea>
+        <div class="satir" style="margin-top:10px">
+          <button class="dugme" id="notEkle">Notu kaydet</button>
+          <button class="dugme ikincil" id="notTemizle">Formu temizle</button>
+          <span class="etiket" id="notSayi">0 not</span>
+        </div>
+      </div>
+      <div class="kart">
+        <div class="satir">
+          <input type="text" id="notArama" placeholder="Notlarda ara..." style="flex:1 1 200px">
+          <select id="notFiltre" style="flex:0 0 160px">
+            <option value="">Tüm dersler</option><option>Türkçe</option><option>Matematik</option>
+            <option>Tarih</option><option>Coğrafya</option><option>Vatandaşlık</option>
+            <option>Güncel Bilgiler</option><option>Genel</option>
+          </select>
+          <button class="dugme ikincil kucuk" id="notYedek">Yedek indir (.json)</button>
+          <button class="dugme ikincil kucuk" id="notGeri">Yedekten yükle</button>
+          <input type="file" id="notDosya" accept=".json" hidden>
+        </div>
+      </div>
+      <div id="notListe"></div>
+    </section>
+
+    <!-- GÜNCEL BİLGİLER -->
+    <section class="ekran" id="ekran-guncel">
+      <div class="baslik"><div class="tepe" style="background:var(--guncel)"></div>
+        <h1>📰 2026 Güncel Bilgiler<span class="alt">Her bilgi kaynaklıdır; kaynağı görmeden ezberlemeye başlamayın</span></h1></div>
+      <div class="kart">
+        <div class="satir">
+          <input type="text" id="guncelArama" placeholder="Güncel bilgilerde ara..." style="flex:1 1 220px">
+          <select id="guncelFiltre" style="flex:0 0 200px"><option value="">Tüm konular</option></select>
+          <button class="dugme ikincil kucuk" id="guncelQuiz">🎯 10 soruluk hızlı tekrar</button>
+        </div>
+        <p class="aciklama" style="margin-top:9px" id="guncelOzet"></p>
+      </div>
+      <div id="guncelListe"></div>
+      <div class="kart" id="guncelQuizAlan" style="display:none"></div>
+    </section>
+
+    <!-- ÇIKMIŞ SORULAR -->
+    <section class="ekran" id="ekran-cikmis">
+      <div class="baslik"><div class="tepe" style="background:var(--cikmis)"></div>
+        <h1>📚 Çıkmış Sorular (2011-2021)<span class="alt">ÖSYM'nin resmî kitapçık arşivi + yıl bazlı analiz</span></h1></div>
+      <div class="kart">
+        <div class="telif">
+          <b>Telif bilgisi (önemli):</b> ÖSYM soru kitapçıklarında aynen şu ibare yer alır — “Bu soruların telif hakları
+          ÖSYM'ye aittir. Sorular ÖSYM'nin yazılı izni olmaksızın hiçbir kişi, kurum veya kuruluş tarafından kullanılamaz.”
+          Bu nedenle 2011-2021 soru metinleri bu uygulamaya <b>kopyalanmamıştır</b>. Bunun yerine:
+          (1) her yılın <b>resmî ÖSYM kitapçık bağlantısı</b>, (2) o yılın <b>test yapısı ve konu dağılımı</b>,
+          (3) aynı formatta yazılmış <b>özgün alıştırma soruları</b> verilir. Bu yol hem yasal hem de sınava hazırlık için yeterlidir.
+        </div>
+      </div>
+      <div class="kart">
+        <h2 class="kucuk">📅 Yıl seç</h2>
+        <div class="satir" id="yilDugmeleri"></div>
+        <div id="yilDetay" style="margin-top:12px"></div>
+      </div>
+      <div class="kart">
+        <h2 class="kucuk">🧠 ÖSYM tarzında özgün sorular</h2>
+        <p class="aciklama">Aşağıdaki sorular tamamen özgün yazılmıştır; ÖSYM sorularının kopyası değildir. Çözüp doğru cevabı anında görürsün.</p>
+        <div class="satir" id="ozgunDersler"></div>
+        <div id="ozgunAlan" style="margin-top:12px"></div>
+      </div>
+    </section>
+
+    <!-- AYARLAR -->
+    <section class="ekran" id="ekran-ayarlar">
+      <div class="baslik"><div class="tepe" style="background:var(--ayarlar)"></div>
+        <h1>⚙️ Ayarlar<span class="alt">Tema, yazı boyutu ve veri</span></h1></div>
+      <div class="kart">
+        <h2 class="kucuk">🎨 Tema</h2>
+        <div class="satir" id="temaDugmeleri"></div>
+      </div>
+      <div class="kart">
+        <h2 class="kucuk">🔠 Yazı boyutu</h2>
+        <input type="range" id="yaziBoyut" min="90" max="125" value="100" step="5" style="width:100%">
+        <span class="etiket" id="yaziBoyutYazi">%100</span>
+      </div>
+      <div class="kart">
+        <h2 class="kucuk">🔊 Sesli okuma</h2>
+        <div class="satir">
+          <label><input type="checkbox" id="sesAc" checked> Güncel bilgi kartlarını sesli okuyabilsin</label>
+          <button class="dugme ikincil kucuk" id="sesDene">Sesi dene</button>
+        </div>
+      </div>
+      <div class="kart">
+        <h2 class="kucuk">💾 Veri</h2>
+        <div class="satir">
+          <button class="dugme ikincil" id="tumYedek">Tüm veriyi yedekle (.json)</button>
+          <button class="dugme ikincil" id="tumSil">Tüm verileri sil</button>
+        </div>
+        <p class="aciklama" style="margin-top:8px">Notlar ve deneme geçmişi yalnızca bu cihazda saklanır (localStorage), hiçbir yere gönderilmez.</p>
+      </div>
+    </section>
+
+    <!-- HAKKINDA -->
+    <section class="ekran" id="ekran-hakkinda">
+      <div class="baslik"><div class="tepe" style="background:var(--hakkinda)"></div>
+        <h1>©️ Hakkında &amp; Telif<span class="alt">Künye ve kullanım koşulları</span></h1></div>
+      <div class="kart">
+        <div class="satir" style="align-items:flex-start">
+          <img src="tasarim/ustad-kafa.png" alt="ÜSTAD" style="width:96px;height:96px;border-radius:50%">
+          <div>
+            <h2 class="kucuk" style="margin-bottom:4px">ÜSTAD KPSS ARAÇLAR</h2>
+            <p class="aciklama">Sınav geri sayımı, net-puan hesaplama, notlar, 2026 güncel bilgiler ve çıkmış soru arşivi.</p>
+            <p class="aciklama"><b>Eser sahibi:</b> Kenan Kuzucu<br><b>Sürüm:</b> <span id="hakSurum">1.0</span></p>
+          </div>
+        </div>
+        <div class="telif" style="margin-top:12px">
+          © 2026 Kenan Kuzucu · TÜM HAKLARI SAKLIDIR. 5846 sayılı FSEK kapsamında korunur.<br>
+          Uygulamanın kodu, tasarımı ve özgün içerikleri izinsiz çoğaltılamaz, kopyalanamaz, satılamaz, dağıtılamaz.<br><br>
+          <b>Üçüncü taraf içerik:</b> Sınav takvimi ve test yapısı bilgileri ÖSYM'nin kamuya açık yayınlarından derlenmiştir;
+          çıkmış soru metinleri telif gereği kullanılmamış, resmî kitapçıklara bağlantı verilmiştir.
+        </div>
+      </div>
+    </section>
+
+    <footer class="bilgi">
+      ÜSTAD KPSS ARAÇLAR · sürüm <span id="altSurum">1.0</span> · © 2026 Kenan Kuzucu<br>
+      Veriler cihazında saklanır · İnternet yalnızca bağlantı açmak için kullanılır
+    </footer>
+  </main>
+</div>
+
+<script src="icerik/takvim.js"></script>
+<script src="icerik/guncel.js"></script>
+<script src="icerik/cikmis.js"></script>
+<script src="assets/araclar.js"></script>
+<script src="assets/sayim.js"></script>
+<script src="assets/hesap.js"></script>
+<script src="assets/notlar.js"></script>
+<script src="assets/guncel.js"></script>
+<script src="assets/cikmis.js"></script>
+<script src="assets/test.js"></script>
+</body>
+</html>

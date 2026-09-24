@@ -1,0 +1,10 @@
+# Yayınlanan sürüm artıkları (yerel ekran görüntüleri, derleme ara klasörleri)
+_ekran/
+build/
+*.apk.tmp
+# Python
+__pycache__/
+*.pyc
+# Kısa yollar (Windows)
+Thumbs.db
+desktop.ini

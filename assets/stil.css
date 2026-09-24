@@ -1,0 +1,100 @@
+/* ÜSTAD KPSS ARAÇLAR · stil.css — her bölüme AYRI renk, açık/yumuşak zemin, bol tema.
+   © 2026 Kenan Kuzucu · TÜM HAKLARI SAKLIDIR (5846 FSEK). */
+:root{
+  --ana:#0e7c66; --zemin:#f4f6f9; --kart:#ffffff; --yazi:#17222e; --soluk:#5c6b7a; --cizgi:#e2e7ee;
+  --panel:#0e7c66; --sayim:#1d6fe0; --hesap:#12a150; --notlar:#e08a00; --guncel:#7c3aed; --cikmis:#dc2626;
+  --ayarlar:#556070; --hakkinda:#0b5570;
+  --golge:0 2px 10px rgba(16,32,64,.10);
+  --yaricap:14px;
+}
+[data-tema="gece"]{ --zemin:#0f1720; --kart:#16222e; --yazi:#e8eef6; --soluk:#9fb0c0; --cizgi:#243040; --golge:0 2px 12px rgba(0,0,0,.45); }
+[data-tema="turkuaz"]{ --zemin:#eefaf8; --kart:#ffffff; --yazi:#0d2b28; --soluk:#4c6b68; }
+[data-tema="badem"]{ --zemin:#faf6ef; --kart:#fffdf8; --yazi:#2b2419; --soluk:#6d6250; }
+[data-tema="lavanta"]{ --zemin:#f6f3fb; --kart:#fff; --yazi:#241d33; --soluk:#665c7a; }
+[data-tema="gul"]{ --zemin:#fdf3f5; --kart:#fff; --yazi:#33191f; --soluk:#7a5560; }
+[data-tema="gokyuzu"]{ --zemin:#eef5fd; --kart:#fff; --yazi:#12283d; --soluk:#4e6680; }
+[data-tema="nane"]{ --zemin:#f1fbf3; --kart:#fff; --yazi:#12301c; --soluk:#4c6b56; }
+[data-tema="kum"]{ --zemin:#f8f3e9; --kart:#fffef9; --yazi:#2f2a1c; --soluk:#6f6650; }
+[data-tema="karanfil"]{ --zemin:#fbf1f1; --kart:#fff; --yazi:#311c1c; --soluk:#745656; }
+[data-tema="fistik"]{ --zemin:#f5f8ee; --kart:#fff; --yazi:#222c14; --soluk:#5d6a4a; }
+[data-tema="antik"]{ --zemin:#f7f4ec; --kart:#fffdf6; --yazi:#2c2617; --soluk:#6d6350; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--zemin);color:var(--yazi);font-family:"Segoe UI",Tahoma,sans-serif;font-size:15px}
+#UYG{display:flex;min-height:100vh}
+/* SOL MENÜ */
+#menu{width:236px;flex:0 0 auto;background:var(--kart);border-right:1px solid var(--cizgi);padding:16px 12px;position:sticky;top:0;height:100vh;overflow:auto}
+.marka{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.marka img{width:44px;height:44px;border-radius:50%;box-shadow:var(--golge)}
+.marka b{font-size:15px;line-height:1.15}
+.marka span{display:block;font-size:11.5px;color:var(--soluk)}
+.madde{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;color:var(--yazi);
+  text-align:left;font-size:14px;padding:10px 11px;border-radius:10px;cursor:pointer;margin-bottom:3px}
+.madde:hover{background:var(--zemin)}
+.madde.secili{color:#fff;font-weight:600}
+.madde .nokta{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+/* İÇERİK */
+#icerik{flex:1 1 auto;padding:20px;min-width:0}
+.baslik{display:flex;align-items:center;gap:12px;margin:0 0 16px}
+.baslik .tepe{width:6px;height:30px;border-radius:4px}
+.baslik h1{font-size:20px;margin:0}
+.baslik .alt{display:block;font-size:12.5px;color:var(--soluk);font-weight:400;margin-top:2px}
+.ekran{display:none}
+.ekran.gorunur{display:block;animation:gir .25s ease}
+@keyframes gir{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.kart{background:var(--kart);border-radius:var(--yaricap);padding:16px;box-shadow:var(--golge);margin-bottom:14px}
+.izgara{display:grid;gap:14px}
+@media(min-width:900px){.ikili{grid-template-columns:1fr 1fr}.uclu{grid-template-columns:repeat(3,1fr)}}
+h2.kucuk{font-size:15px;margin:0 0 10px}
+p.aciklama{font-size:13px;color:var(--soluk);margin:0 0 10px;line-height:1.5}
+.etiket{display:inline-block;font-size:11.5px;padding:2px 9px;border-radius:20px;background:var(--zemin);color:var(--soluk);border:1px solid var(--cizgi)}
+/* GERİ SAYIM */
+.sayim-buyuk{display:flex;gap:12px;flex-wrap:wrap;align-items:stretch}
+.sb-kutu{flex:1 1 90px;background:var(--kart);border-radius:12px;padding:12px;text-align:center;box-shadow:var(--golge)}
+.sb-kutu b{display:block;font-size:30px;line-height:1.1;font-variant-numeric:tabular-nums}
+.sb-kutu span{font-size:11.5px;color:var(--soluk);letter-spacing:.5px}
+.hedef{display:flex;align-items:center;gap:12px;padding:11px;border-radius:12px;background:var(--kart);box-shadow:var(--golge);margin-bottom:9px;border-left:5px solid var(--sayim)}
+.hedef .hg{flex:1;min-width:0}
+.hedef b{display:block;font-size:14px}
+.hedef span{font-size:12px;color:var(--soluk)}
+.hedef .kalan{font-family:Consolas,monospace;font-size:13px;font-weight:700}
+.hedef.gecti{opacity:.55;border-left-color:var(--soluk)}
+.hedef.simdi{box-shadow:0 0 0 2px var(--sayim),var(--golge)}
+/* FORM + TABLO */
+label.alan{display:block;font-size:12.5px;color:var(--soluk);margin:8px 0 4px}
+input[type=number],input[type=text],textarea,select{width:100%;padding:10px;border:1px solid var(--cizgi);border-radius:9px;
+  background:var(--kart);color:var(--yazi);font-size:14px;font-family:inherit}
+textarea{min-height:96px;resize:vertical}
+.dugme{border:0;border-radius:10px;padding:10px 14px;font-size:13.5px;font-weight:600;color:#fff;cursor:pointer;background:var(--ana)}
+.dugme.ikincil{background:var(--zemin);color:var(--yazi);border:1px solid var(--cizgi)}
+.dugme.kucuk{padding:6px 10px;font-size:12.5px}
+.satir{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--cizgi)}
+th{color:var(--soluk);font-weight:600;font-size:12.5px}
+td.rakam{font-variant-numeric:tabular-nums}
+.sonuc-kutu{margin-top:10px;padding:12px;border-radius:12px;background:var(--zemin);font-size:14px}
+.sonuc-kutu b.buyuk{font-size:24px;font-variant-numeric:tabular-nums}
+/* NOTLAR */
+.not{background:var(--kart);border-radius:12px;padding:12px;box-shadow:var(--golge);margin-bottom:10px;border-left:5px solid var(--notlar)}
+.not h3{margin:0 0 4px;font-size:14.5px}
+.not .govde{font-size:13.5px;color:var(--yazi);white-space:pre-wrap;line-height:1.5}
+.not .meta{font-size:11.5px;color:var(--soluk);margin-top:7px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+/* GÜNCEL */
+.guncel{background:var(--kart);border-radius:12px;padding:13px;box-shadow:var(--golge);margin-bottom:10px;border-left:5px solid var(--guncel)}
+.guncel h3{margin:0 0 5px;font-size:14.5px}
+.guncel p{margin:0 0 7px;font-size:13.5px;line-height:1.5}
+.guncel a{color:var(--guncel);font-size:12px;word-break:break-all}
+/* ÇIKMIŞ */
+.yil-kutu{background:var(--kart);border-radius:12px;padding:13px;box-shadow:var(--golge);border-top:4px solid var(--cikmis)}
+.yil-kutu h3{margin:0 0 7px;font-size:15px}
+.yil-kutu .yapi{font-size:12.5px;color:var(--soluk);line-height:1.5}
+.telif{font-size:12px;color:var(--soluk);background:var(--zemin);border-radius:10px;padding:11px;line-height:1.55}
+.puan-halka{width:120px;height:120px}
+footer.bilgi{margin:18px 0 30px;font-size:12px;color:var(--soluk);text-align:center;line-height:1.6}
+@media(max-width:820px){
+  #UYG{flex-direction:column}
+  #menu{width:100%;height:auto;position:static;border-right:0;border-bottom:1px solid var(--cizgi)}
+  #menu .madde{display:inline-flex;width:auto;margin:0 3px 4px}
+  #icerik{padding:14px}
+}
